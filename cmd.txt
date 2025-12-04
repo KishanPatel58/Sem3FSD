@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #terminal {
+            background: #000;
+            color: #00ff00;
+            font-family: Consolas, monospace;
+            padding: 10px;
+            height: 300px;
+            width: 600px;
+            overflow-y: auto;
+            border-radius: 6px;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+        }
+
+        #cmdInput {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            outline: none;
+            width: 100%;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="terminal">
+        <div id="output"></div>
+        <div class="input-line">
+            <span>C:\></span>
+            <input type="text" id="cmdInput" autofocus />
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById("cmdInput");
+        const output = document.getElementById("output");
+
+        input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+                const cmd = input.value;
+                output.innerHTML += `<div>C:\\> ${cmd}</div>`;
+
+                // simple responses
+                if (cmd === "help") {
+                    output.innerHTML += "<div>Available commands: help, clear, time</div>";
+                } else if (cmd === "time") {
+                    output.innerHTML += `<div>${new Date().toLocaleTimeString()}</div>`;
+                } else if (cmd === "clear") {
+                    output.innerHTML = "";
+                } else {
+                    output.innerHTML += "<div>'" + cmd + "' is not recognized...</div>";
+                }
+
+                input.value = "";
+                output.scrollTop = output.scrollHeight;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

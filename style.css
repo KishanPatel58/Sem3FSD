@@ -3,32 +3,39 @@
     font-family: font1;
     src: url('fonts/AkayaKanadaka-Regular.ttf');
 }
+
 @font-face {
     font-family: font2;
     src: url('fonts/CherryCreamSoda-Regular.ttf');
 }
+
 @font-face {
     font-family: font3;
     src: url('fonts/Delius-Regular.ttf');
 }
+
 @font-face {
-    font-family: 'font-4-1';
+    font-family: font4;
     src: url('fonts/Truculenta-VariableFont_opsz\,wdth\,wght.ttf');
 }
+
 @font-face {
-    font-family: 'font-4-2';
+    font-family: font5;
     src: url('fonts/Truculenta_18pt-Bold.ttf');
 }
+
 @font-face {
-    font-family: 'font-4-3';
+    font-family: font6;
     src: url('fonts/Truculenta_18pt-Medium.ttf');
 }
+
 @font-face {
-    font-family: 'font-4-4';
+    font-family: font7;
     src: url('fonts/Truculenta_18pt-Light.ttf');
 }
+
 /* Default CSS */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,13 +43,16 @@
     list-style: none;
     user-select: none;
 }
-html,body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
+
 /* Roots */
-:root{
+:root {
     --background-color-white: #ffff;
     --background-color-black: #000;
     --text-color-black: #111;
@@ -51,6 +61,378 @@ html,body{
     --text-blue: rgb(0, 102, 255);
     --text-pink: rgb(248, 96, 121);
 }
-body{
-    background: url('assets/windows112.webp') cover center;
+
+body {
+    background: url('assets/windows11bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#task-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#file-explorer {
+    width: 30px;
+    height: 30px;
+    cursor: grab;
+}
+
+#google-chrome {
+    width: 30px;
+    height: 30px;
+    cursor: grab;
+}
+
+.search-lable-icon {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #00000086;
+    padding: 8px 0px;
+    color: white;
+    border-radius: 20px;
+    cursor: grab;
+    font-family: sans-serif;
+}
+
+#searchicon {
+    width: 20px;
+    height: 20px;
+}
+
+#Windowsicon {
+    width: 30px;
+    height: 30px;
+    cursor: grab;
+}
+
+#microsoftedge {
+    width: 30px;
+    height: 30px;
+    cursor: grab;
+}
+
+.ri-terminal-box-fill {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#file-explorer:active,
+#google-chrome:active,
+#Windowsicon:active,
+#microsoftedge:active,
+.search-lable-icon:active {
+    cursor: grabbing;
+    transform: scale(0.9);
+}
+
+/*  */
+.tooltip {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltiptext {
+    visibility: hidden;
+    /* Hidden by default */
+    width: 120px;
+    background-color: #00000086;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 6px;
+    position: absolute;
+    top: -45px;
+    z-index: 1;
+    font-synthesis: none;
+    text-align: center;
+}
+
+/* Show the tooltip text on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* start-menu */
+.start-menu {
+    width: 56vw;
+    height: 85vh;
+    position: fixed;
+    left: 50%;
+    bottom: -100%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s linear;
+    z-index: -1;
+}
+
+.start-left {
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #29292b;
+}
+
+#start-search-bar {
+    width: 85%;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    outline: 1px solid white;
+    background-color: rgb(37, 36, 36);
+    padding: 0px 35px;
+    position: relative;
+    color: white;
+}
+
+.start-right {
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #29292b;
+}
+
+.start-right h1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.start-right p {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    color: rgb(173, 173, 173);
+    width: 80%;
+}
+
+.start-right .mobile-type {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.start-right button {
+    height: 30px;
+    width: auto;
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #3d3d3d;
+    color: white;
+    cursor: grab;
+    transition: 0.3s ease;
+}
+
+.start-right button:active {
+    background: #4b4b4b;
+    cursor: grabbing;
+}
+
+.start-right button .tm {
+    font-size: 0.5rem;
+}
+
+.start-search {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-pinned {
+    width: 100%;
+    height: 40%;
+    padding: 25px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.start-Recommended {
+    width: 100%;
+    height: 40%;
+    padding: 25px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.start-profile {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 65px;
+}
+
+.start-profile h3 {
+    color: white;
+    font-weight: 100;
+    cursor: grab;
+}
+
+.start-profile h3:active {
+    cursor: grabbing;
+}
+
+.laptopmobile {
+    width: 150px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.logo .glitchhunterlogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/*  */
+
+
+#terminal {
+    background: #000;
+    color: #00ff00;
+    font-family: Consolas, monospace;
+    padding: 10px;
+    height: 60vh;
+    width: 65vw;
+    overflow-y: auto;
+    border-radius: 6px;
+    position: fixed;
+    left: 50%;
+    bottom: -100%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.min-max-close{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.min-max-close h1{
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 9px;
+}
+
+#restordown{
+    display: none;
+}
+
+.min-max-close h1:hover{
+    background-color: gray;
+}
+
+.min-max-close .closebtn:hover{
+    background-color: crimson;
+}
+
+.input-line {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#cmdInput {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+}
+.myFolder{
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.myFolder img{
+    width: 50px;
+    height: 50px;
+}
+.myFolder h1{
+    color: white;
+    font-family: sans-serif;
+}
+.refresh-edit-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15vw;
+    height: 35vh;
+    border-radius: 15px;
+    background-color: rebeccapurple;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.refresh-edit-menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

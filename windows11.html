@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/glitchhunterlogo.webp" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Windows 11 | Glitch Hunters</title>
+</head>
+
+<body>
+    <main id="main">
+
+    </main>
+    <footer id="task-bar">
+        <div class="tooltip">
+            <img src="assets/windowsicon.svg" id="Windowsicon" alt="">
+            <span class="tooltiptext">Start(window + shift + X)</span>
+        </div>
+        <div class="search-lable-icon">
+            Search
+            <img src="assets/searchicon.svg" id="searchicon" alt="">
+        </div>
+        <div class="tooltip">
+            <img src="assets/folder.svg" id="file-explorer" alt="">
+            <span class="tooltiptext">File Explorer</span>
+        </div>
+        <div class="tooltip">
+            <img src="assets/googlechrome.png" id="google-chrome" alt="">
+            <span class="tooltiptext">Google Chrome</span>
+        </div>
+        <div class="tooltip">
+            <img src="assets/microsoftedge.webp" id="microsoftedge" alt="">
+            <span class="tooltiptext">Microsoft Edge</span>
+        </div>
+        <div class="tooltip">
+            <h1 id="terminalbtn"><i class="ri-terminal-box-fill"></i></h1>
+            <span class="tooltiptext">Command Prompt</span>
+        </div>
+    </footer>
+    <div id="terminal">
+        <div class="min-max-close">
+            <h1><i class="ri-subtract-line"></i></h1>
+            <h1 id="maximise"><i class="ri-square-line"></i></h1>
+            <h1 id="restordown"><i class="ri-folders-line"></i></h1>
+            <h1 class="closebtn"><i class="ri-close-line"></i></h1>
+        </div>
+        <div id="output"></div>
+        <div class="input-line">
+            <span id="cmdspan">C:\></span>
+            <input type="text" id="cmdInput" autofocus />
+        </div>
+    </div>
+    <div id="start-menu" class="start-menu">
+        <div class="start-left">
+            <div class="start-search">
+                <input type="text" id="start-search-bar" placeholder="Search for apps, settings and documents">
+            </div>
+            <div class="start-pinned">
+                Pinned
+            </div>
+            <div class="start-Recommended">
+                Recommended
+            </div>
+            <div class="start-profile">
+                <div class="logo">
+                    <img src="assets/glitchhunterlogo.webp" class="glitchhunterlogo" alt="">
+                    Glitch Hunters
+                </div>
+                <h3 onclick="window.close()"><i class="ri-shut-down-line"></i></h3>
+            </div>
+        </div>
+        <div class="start-right">
+            <img src="assets/laptopwithmobile.webp" class="laptopmobile" alt="">
+            <h1>Access your mobile device here</h1>
+            <p>Keep up with calls, messages and recent activity here in the Start menu.</p>
+            <div class="mobile-type">
+                <button class="android">Android<sup class="tm">TM</sup></button>
+                <button class="iphone">iPhone<sup>&#174;</sup></button>
+            </div>
+        </div>
+    </div>
+    <div id="search-menu"></div>
+    <div id="refreshmenu" class="refresh-edit-menu">
+        <ul>
+            <li><a onclick="reload();" href="">Reload</a></li>
+            <li><a href=""></a>Personalize</li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
