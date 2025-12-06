@@ -154,13 +154,13 @@ document.querySelectorAll(".myFolder").forEach((folder) => {
         console.log("Removed:", folderName);
     });
 });
-const refreshmenu = document.getElementById("refreshmenu");
-main.addEventListener("dblclick",(e)=>{
-    refreshmenu.style.transform = `translate(${e.x,e.y})`;
-    refreshmenu.style.display = "flex"
-    console.log(e)
-})
+// const refreshmenu = document.getElementById("refreshmenu");
+// main.addEventListener("dblclick",(e)=>{
+//     refreshmenu.style.transform = `translate(${e.x,e.y})`;
+//     refreshmenu.style.display = "flex"
+//     console.log(e)
+// })
 
-const reload = ()=>{
-    window.location.reload();
-}
+// const reload = ()=>{
+//     window.location.reload();
+// }
